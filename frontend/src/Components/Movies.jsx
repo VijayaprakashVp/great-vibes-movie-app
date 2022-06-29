@@ -47,7 +47,7 @@ const Movies = () => {
 
   const handleSubmitMovies = (req, id, name) => {
     if (req === 0) {
-      fetch(`http://localhost:8081/movies`, {
+      fetch(`https://great-vibe.herokuapp.com/movies`, {
         method: 'POST',
         body: JSON.stringify(addMovie),
         headers: {
@@ -60,7 +60,7 @@ const Movies = () => {
     } else if (req === 1) {
       let temp = addMovie;
       if (enableEdit === true) temp = edit;
-      fetch(`http://localhost:8081/movies/${id}`, {
+      fetch(`https://great-vibe.herokuapp.com/movies/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(temp),
         headers: {
@@ -71,7 +71,7 @@ const Movies = () => {
       setAddMovie({});
       alert(`Details Updated Succesfully`);
     } else if (req === 2) {
-      fetch(`http://localhost:8081/movies/${id}`, {
+      fetch(`https://great-vibe.herokuapp.com/movies/${id}`, {
         method: 'DELETE',
       });
       alert(`Movie Deleted`);
@@ -89,7 +89,7 @@ const Movies = () => {
   ///////////////////////////////////////////////////////////////
 
   const handleEditForm = id => {
-    fetch(`http://localhost:8081/movies/${id}`)
+    fetch(`https://great-vibe.herokuapp.com/movies/${id}`)
       .then(res => res.json())
       .then(res => setEdit(res))
       .catch(err => console.log(err));
