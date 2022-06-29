@@ -28,7 +28,7 @@ const Movies = () => {
   // console.log(data);
 
   useEffect(() => {
-    fetch(`http://localhost:8081/movies`)
+    fetch(`https://great-vibe.herokuapp.com/movies`)
       .then(res => res.json())
       .then(res => setData(res))
       .catch(err => console.log(err));
